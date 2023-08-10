@@ -29,6 +29,34 @@ namespace StackAndQueue
             this.top = node;
             Console.WriteLine("inserted value is {0}", data);
         }
+        public void Peek()
+        {
+            if (this.top == null)
+            {
+                Console.WriteLine("Stack is Empty");
+                return;
+            }
+            Console.WriteLine("\n{0} is top element of the stack", this.top.data);
+        }
+        public void Pop()
+        {
+            if (this.top == null)
+            {
+                Console.WriteLine("Stack is Empty, Deletion is not possible");
+                return;
+            }
+            Console.WriteLine("\n{0} is deleted from top of the stack", this.top.data);
+            this.top = this.top.next;
+        }
+        public bool IsEmpty()
+        {
+            while (this.top != null)
+            {
+                Peek();
+                Pop();
+            }
+            return true;
+        }
         public void Display()
         {
             Node temp = this.top;
